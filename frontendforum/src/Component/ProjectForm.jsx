@@ -39,7 +39,7 @@ const ProjectForm = () => {
                     value={name}
                     name="name"
                     w="300px"
-                    placeholder="User Name"
+                    placeholder="Project Name"
                     onChange={handleChange}
                     type='text'
                 />
