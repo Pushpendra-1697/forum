@@ -16,7 +16,7 @@ export const getTasks = () => async (dispatch) => {
 export const addTask = (message) => async (dispatch) => {
     dispatch({ type: PROJECT_LOADING });
     try {
-        let res = await axios.post(`${backend_url}/task/`, message);
+        let res = await axios.post(`${backend_url}/task/`, message, { headers: { user_id: localStorage.getItem('project_id') } });
         alert(`${res.data.msg}`);
         dispatch({ type: ADD_TASK, payload: res.data.project });
     } catch (e) {
